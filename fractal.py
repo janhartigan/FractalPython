@@ -31,8 +31,8 @@ class fractal:
 	def draw_fractal(self):
 		'''this draws the fractal and returns the image list'''
 		z = complex()
-		c = null
-		i = null
+		c = complex()
+		i = 0
 		pixel = 0
 		x = 0
 		y = 0
