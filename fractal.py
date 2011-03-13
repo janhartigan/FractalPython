@@ -4,8 +4,8 @@ class fractal:
 	'''iterator that manages the creation of a fractal image'''
 	
 	options = {
-		'width': 590,	#width in pixels of the fractal area
-		'height': 380,	#height in pixels of the fractal area
+		'width': 500,	#width in pixels of the fractal area
+		'height': 100,	#height in pixels of the fractal area
 		'max_iterations': 300,	#maximum number of iterations to perform for each point
 		'color_range_repeats': 7	#the amount of times to repeat the color pattern
 	}
@@ -38,7 +38,7 @@ class fractal:
 		y = 0
 		itminus = 0
 		colors = {'r':0, 'g':0, 'b':0}
-		over_iterated = false
+		over_iterated = False
 		iteration_divider = self.options['max_iterations'] / self.options['color_range_repeats']
 		orig_zoom_height = self.zoom['height']
 		
@@ -55,7 +55,7 @@ class fractal:
 				z = complex()
 				c = self.convert_pixel_to_point(x, y)
 				i = 0
-				over_iterated = false
+				over_iterated = False
 				
 				while abs(z) < 4 and not over_iterated:
 					z = z**2 + c
@@ -67,7 +67,7 @@ class fractal:
 						self.image.extend([0, 0, 0, 255])
 						pixel += 4
 						
-						over_iterated = true
+						over_iterated = True
 				
 				if not over_iterated:
 					#if the point is outside the set, color it
@@ -76,7 +76,7 @@ class fractal:
 					
 					self.image.extend([colors['r'], colors['g'], colors['b'], 255])
 					pixel += 4
-					
+		
 		return self.image
 		
 	
