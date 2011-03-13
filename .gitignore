@@ -1,0 +1,5 @@
+psd/
+.project
+.tmp*
+__pycache__
+.pydevproject
